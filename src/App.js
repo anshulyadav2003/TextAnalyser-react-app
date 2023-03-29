@@ -1,14 +1,14 @@
 import './App.css';
 import React, {useState} from 'react'
-import About from './components/About';
+// import About from './components/About';
 import Navbar from './components/Navbar'
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route
+// } from "react-router-dom";
 
 
 function App() {
@@ -41,18 +41,20 @@ function App() {
   }
   return (
     <>
-    <Router>
+    {/* <Router> */}
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
       <Alert alert={alert}/>
       <div className='container my-3'> 
-        <Routes>
+        <TextForm heading='Enter the text to analyse' mode={mode} showAlert={showAlert}/>
+        {/* <Routes> */}
           {/* 'exact' use to do complete matching of path */}
           {/* if we don't use 'exact' then react does partial matching */}
-          <Route exact path="/about" element={<About />} />
-          <Route path="/" element={<TextForm heading='Enter the text to analyse' mode={mode} showAlert={showAlert}/>} />
-        </Routes>
+          {/* <Route exact path="/about" element={<About />} /> */}
+          {/* <Route path="/" element={<TextForm heading='Enter the text to analyse' mode={mode} showAlert={showAlert}/>} /> */}
+        {/* </Routes> */}
       </div>
-      </Router>
+
+    {/* </Router> */}
     </>
   );
 }
